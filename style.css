@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Montserrat:wght@300;400;500;600&family=Amiri:wght@700&display=swap');
+
+html, body {
+    margin: 0; padding: 0; min-height: 100vh; background-color: #f7f4eb;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: url('download (76).jfif') no-repeat center center fixed;
+    background-size: cover;
+    display: flex; justify-content: center; align-items: flex-start;
+    overflow-x: hidden; color: #4a3b32;
+}
+
+/* GOLDEN SPARKS BACKGROUND SETUP */
+.sparkle-container {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 5;
+}
+.sparkle {
+    position: absolute; width: 4px; height: 4px; background: #dfb76c; border-radius: 50%;
+    box-shadow: 0 0 10px #fff, 0 0 15px #dfb76c; animation: shine 5s infinite ease-in-out;
+}
+.s1 { top: 15%; left: 12%; animation-delay: 0s; }
+.s2 { top: 30%; left: 85%; animation-delay: 1s; width: 5px; height: 5px; }
+.s3 { top: 55%; left: 8%; animation-delay: 2s; }
+.s4 { top: 75%; left: 90%; animation-delay: 0.5s; }
+.s5 { top: 88%; left: 22%; animation-delay: 3s; width: 6px; height: 6px; }
+.s6 { top: 20%; left: 45%; animation-delay: 1.5s; }
+.s7 { top: 45%; left: 70%; animation-delay: 2.5s; width: 5px; height: 5px; }
+.s8 { top: 65%; left: 30%; animation-delay: 0.8s; }
+.s9 { top: 10%; left: 75%; animation-delay: 3.5s; }
+.s10 { top: 80%; left: 55%; animation-delay: 1.8s; width: 5px; height: 5px; }
+
+@keyframes shine {
+    0%, 100% { opacity: 0; transform: scale(0.4); }
+    50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* VELVET CURTAINS */
+#curtain-container {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 999; display: flex; cursor: pointer; overflow: hidden;
+}
+
+#curtain-container.open {
+    pointer-events: none;
+    visibility: hidden;
+    transition: visibility 0s 1.6s;
+}
+
+.curtain {
+    position: absolute; top: 0; width: 50vw; height: 100vh;
+    background: linear-gradient(to bottom, #4a0512, #210005);
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.9);
+    transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.left-curtain { left: 0; border-right: 1.5px solid #dfb76c; }
+.right-curtain { right: 0; border-left: 1.5px solid #dfb76c; }
+
+#curtain-container.open .left-curtain { transform: translateX(-50vw); }
+#curtain-container.open .right-curtain { transform: translateX(50vw); }
+#curtain-container.open .curtain-center-seal { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+
+.curtain-center-seal {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    z-index: 1000; display: flex; flex-direction: column; align-items: center;
+    width: 90%; max-width: 280px; transition: all 1s ease;
+}
+.seal-bismillah { width: 100%; max-width: 240px; height: auto; margin-bottom: 15px; filter: invert(1) brightness(2); }
+.seal-monogram { width: 100px; height: 100px; margin-bottom: 15px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+.seal-rings { width: 75px; height: auto; margin-bottom: 25px; }
+.click-action { text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; color: #dfb76c; animation: pulse 2s infinite; margin: 0; }
+
+/* MAIN CARD CONTAINER */
+#main-scroll-wrapper { width: 100%; display: flex; justify-content: center; padding: 40px 15px 80px 15px; box-sizing: border-box; transition: opacity 1s ease; }
+.hidden-scroll { opacity: 0; }
+
+.a4-card {
+    background: rgba(255, 255, 255, 0.93); backdrop-filter: blur(12px);
+    width: 100%; max-width: 450px; min-height: 640px; border-radius: 4px;
+    box-shadow: 0 40px 80px rgba(74, 59, 50, 0.12); border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 40px 25px; box-sizing: border-box; position: relative; overflow: hidden;
+}
+.scroll-section { position: relative; margin-bottom: 35px; text-align: center; }
+.top-verse-section { padding: 0 10px; margin-top: 10px; margin-bottom: 20px; }
+.quran-verse-img { width: 100%; max-width: 310px; height: auto; mix-blend-mode: multiply; display: block; margin: 0 auto; }
+
+/* NAMES STYLING WITH BACKGROUND FLOWERS */
+.names-section { position: relative; padding: 5px 0; }
+.names-gold-backdrop-box {
+    width: 100%; padding: 35px 10px; margin: 15px auto; box-sizing: border-box; position: relative;
+    background-image: radial-gradient(circle, rgba(219, 182, 108, 0.22) 0%, rgba(219, 182, 108, 0.05) 60%, rgba(255,255,255,0) 75%);
+    border-radius: 50%;
+}
+
+.decorative-flower {
+    position: absolute;
+    color: rgba(212, 175, 55, 0.25);
+    font-size: 2.2rem;
+    pointer-events: none;
+    user-select: none;
+    font-family: serif;
+}
+.flower-left { top: 10%; left: 15%; transform: rotate(-15deg); }
+.flower-right { bottom: 10%; right: 15%; transform: rotate(45deg); }
+
+.parents-request { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #7a6b62; line-height: 1.8; margin-bottom: 5px; font-weight: 500; }
+.names-wrapper { position: relative; z-index: 2; }
+.groom-name, .bride-name { font-family: 'Monsieur La Doulaise', cursive; font-size: 3.8rem; color: #563925; margin: 0; font-weight: 400; line-height: 1.1; }
+.ampersand { font-family: 'Monsieur La Doulaise', cursive; font-size: 2.8rem; color: #b89047; margin: 10px 0; }
+.divider-line { width: 60px; height: 1px; background: radial-gradient(circle, #b89047 0%, rgba(255,255,255,0) 100%); margin: 25px auto 0 auto; }
+
+/* TIMER DISPLAY */
+.countdown-container { display: flex; justify-content: space-around; background: rgba(140, 98, 57, 0.04); padding: 18px 10px; border-radius: 12px; margin-top: 10px; }
+.countdown-box span { font-size: 1.5rem; font-weight: 600; color: #563925; display: block; }
+.countdown-box p { margin: 4px 0 0 0; font-size: 0.65rem; text-transform: uppercase; color: #a08a7c; letter-spacing: 1.5px; }
+
+/* SCRATCH SPACE */
+.save-date-title { font-family: 'Monsieur La Doulaise', cursive; font-size: 3.5rem; color: #563925; margin: 0; font-weight: 400; }
+.scratch-container { position: relative; width: 280px; height: 80px; margin: 20px auto; touch-action: none; }
+.secret-date { 
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #fffcf9; color: #563925; font-size: 1.25rem; font-weight: bold; 
+    display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 8px; border: 2px dashed #c5a059; box-sizing: border-box; z-index: 1; 
+}
+#scratch-canvas { position: absolute; top: 0; left: 0; cursor: pointer; border-radius: 8px; z-index: 2; }
+.hint-text { font-size: 0.7rem; color: #a08a7c; text-transform: uppercase; margin-top: 15px; margin-bottom: 0; }
+
+/* EVENTS & VENUE */
+.event-timing-section { margin: 25px 0; }
+.event-title { font-family: 'Monsieur La Doulaise', cursive; font-size: 3.2rem; color: #b89047; margin: 0 0 5px 0; font-weight: 400; }
+.event-time { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 1.1rem; color: #563925; letter-spacing: 1.5px; margin: 0; text-transform: uppercase; }
+.venue-section { margin-top: 25px; }
+.venue-title { font-family: 'Monsieur La Doulaise', cursive; font-size: 3.2rem; color: #b89047; margin: 0 0 5px 0; font-weight: 400; }
+.venue-details { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 1rem; color: #563925; line-height: 1.6; letter-spacing: 1px; margin: 0; }
+.street-line { font-size: 0.85rem; font-weight: 300; color: #7a6b62; text-transform: uppercase; letter-spacing: 2px; }
+
+@keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
