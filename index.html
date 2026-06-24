@@ -1,93 +1,81 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fffdf9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #e0d0b0;
+            padding: 40px 20px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        .verse {
+            font-size: 13px; /* Point 5: Made the verse text smaller */
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .title {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8a7355;
+            margin-bottom: 10px;
+        }
+        .names {
+            font-size: 28px; /* Point 2: Made the bride & groom names smaller */
+            color: #b38f4b;
+            margin: 20px 0;
+            font-weight: normal;
+        }
+        .details {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-top: 30px;
+        }
+        .flower {
+            color: #d4af37;
+            margin: 0 5px;
+        }
+    </style>
 </head>
 <body>
 
-    <audio id="bg-nasheed" src="background-nasheed.mp3" loop></audio>
+    <div class="container">
+        <!-- Point 5: The Verse (Smaller Size) -->
+        <p class="verse">
+            "And among His signs is this, that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts."
+        </p>
 
-    <div class="sparkle-container">
-        <div class="sparkle s1"></div><div class="sparkle s2"></div>
-        <div class="sparkle s3"></div><div class="sparkle s4"></div>
-        <div class="sparkle s5"></div><div class="sparkle s6"></div>
-        <div class="sparkle s7"></div><div class="sparkle s8"></div>
-        <div class="sparkle s9"></div><div class="sparkle s10"></div>
-    </div>
-
-    <div id="curtain-container" onclick="revealInvitation()">
-        <div class="curtain left-curtain"></div>
-        <div class="curtain right-curtain"></div>
+        <!-- Point 3 & 4: Added flowers and changed to "their daughter" -->
+        <p class="title"><span class="flower">🌸</span> The wedding celebration of their daughter <span class="flower">🌸</span></p>
         
-        <div class="curtain-center-seal">
-            <img src="bismilallah.png" class="seal-bismillah" alt="Bismillah">
-            <img src="AY initial wedding monogram logo.jfif" class="seal-monogram" alt="AY Monogram">
-            <img src="ring.png" class="seal-rings" alt="Wedding Rings">
-            <p class="click-action">Click to Open</p>
+        <!-- Point 2: Bride & Groom Names (Smaller and elegant) -->
+        <h2 class="names">Bride & Groom</h2>
+
+        <hr style="width: 50%; border: 0; border-top: 1px solid #e0d0b0; margin: 30px auto;">
+
+        <!-- Point 1: Fixed Nusarath to Nusrath -->
+        <div class="details">
+            <p><span class="flower">🌸</span> Join us to celebrate this blessed occasion <span class="flower">🌸</span></p>
+            <p><strong>Venue:</strong><br>
+            Bilal Hall, Nusrath Colony</p>
         </div>
     </div>
 
-    <div id="main-scroll-wrapper" class="hidden-scroll">
-        <div class="a4-card">
-            
-            <div class="scroll-section top-verse-section">
-                <img src="And We (1).jfif" class="quran-verse-img" alt="Quran Verse">
-                <div class="divider-line"></div>
-            </div>
-
-            <div class="scroll-section names-section">
-                <p class="parents-request">Ayub Kokari and Nusarat Musba<br>request your presence on the occasion of the wedding celebration of</p>
-                
-                <div class="names-gold-backdrop-box">
-                    <div class="decorative-flower flower-left">✿</div>
-                    <div class="decorative-flower flower-right">✿</div>
-                    
-                    <div class="names-wrapper">
-                        <h1 class="bride-name">Amna Nuha</h1>
-                        <div class="ampersand">&</div>
-                        <h1 class="groom-name">Mohammed Yunus</h1>
-                    </div>
-                </div>
-                <div class="divider-line"></div>
-            </div>
-
-            <div class="scroll-section">
-                <h3 class="save-date-title">Save The Date</h3>
-                <div class="scratch-container">
-                    <div class="secret-date">JULY 16, 2026<br><span style="font-size: 1rem; font-weight: 500; margin-top: 4px; display: block; color: #b89047;">at 11:30 AM</span></div>
-                    <canvas id="scratch-canvas"></canvas>
-                </div>
-                <p class="hint-text">Scratch the gold overlay to see the date & time</p>
-                <div class="divider-line"></div>
-            </div>
-
-            <div class="scroll-section">
-                <div class="countdown-container">
-                    <div class="countdown-box"><span id="days">00</span><p>Days</p></div>
-                    <div class="countdown-box"><span id="hours">00</span><p>Hours</p></div>
-                    <div class="countdown-box"><span id="minutes">00</span><p>Mins</p></div>
-                    <div class="countdown-box"><span id="seconds">00</span><p>Secs</p></div>
-                </div>
-                <div class="divider-line"></div>
-            </div>
-
-            <div class="scroll-section event-timing-section">
-                <h4 class="event-title">Mehfil-e-Jalwa</h4>
-                <p class="event-time">8:30 PM</p>
-                <div class="divider-line"></div>
-            </div>
-
-            <div class="scroll-section venue-section">
-                <h4 class="venue-title">The Venue</h4>
-                <p class="venue-details">Bilal Hall<br><span class="street-line">Nawayath Colony</span></p>
-            </div>
-
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
