@@ -106,7 +106,7 @@ body {
 .parents-request { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #7a6b62; line-height: 1.8; margin-bottom: 5px; font-weight: 500; }
 .names-wrapper { position: relative; z-index: 2; }
 .groom-name, .bride-name { font-family: 'Monsieur La Doulaise', cursive; font-size: 3.0rem; color: #563925; margin: 0; font-weight: 400; line-height: 1.1; }
-.ampersand { font-family: 'Monsieur La Doulaise', cursive; font-size: 2.4rem; color: #b89047; margin: 10px 0; }
+.ampersand { font-family: 'Monsieur La Doulaise', cursive; font-size: 2.0rem; color: #b89047; margin: 10px 0; }
 .divider-line { width: 60px; height: 1px; background: radial-gradient(circle, #b89047 0%, rgba(255,255,255,0) 100%); margin: 25px auto 0 auto; }
 
 /* TIMER DISPLAY */
